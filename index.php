@@ -20,10 +20,10 @@ require("vendor/autoload.php");
 $f3 = Base::Instance();
 
 //Define a default route
-$f3->route("GET /", function () {
-    //$view = new Template();
-    //echo $view->render("views/home.html");
-    echo "<h1>Welcome!</h1>";
+$f3->route("GET /", function ($f3) {
+    $f3->set('title', 'All About Templating');
+    $view = new Template();
+    echo $view->render("views/home.html");
 });
 
 //Run f3
